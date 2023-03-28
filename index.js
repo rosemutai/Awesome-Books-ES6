@@ -9,4 +9,6 @@ form.addEventListener('submit', (e) => {
   books.formAddBook();
 });
 
-document.addEventListener('DOMContentLoaded', displayCurrentDate);
+setInterval(() => {
+  displayCurrentDate();
+}, 1000);
