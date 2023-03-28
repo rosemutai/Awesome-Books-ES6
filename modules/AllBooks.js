@@ -29,15 +29,18 @@ export default class AllBooks {
 
   displayAllBooks() {
     this.books.forEach((book, index) => {
-      this.bookDetails = `
-        <div class='book-details'>
-          <h3>${book.title} by ${book.author}</h3>
-          <button class='remove-btn' id='removeBtn'>Remove</button>
-        </div>
-      `;
-      this.booksSection.innerHTML += this.bookDetails;
-      this.deleteBtn = document.getElementById('removeBtn');
-      this.deleteBtn.addEventListener('click', () => this.deleteBook(index));
+      const div = document.createElement('div');
+      div.className = 'book-details';
+      const h3 = document.createElement('h3');
+      h3.textContent = `${book.title} by ${book.author}`;
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'remove-btn';
+      deleteButton.textContent = 'Remove';
+
+      deleteButton.addEventListener('click', () => this.deleteBook(index));
+      div.appendChild(h3);
+      div.appendChild(deleteButton);
+      this.booksSection.appendChild(div);
     });
   }
 
