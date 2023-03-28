@@ -1,4 +1,4 @@
-import { DateTime } from '../node_modules/luxon/build/es6/luxon.js';
+import { DateTime } from './luxon.js';
 
 const formSection = document.getElementById('form-section');
 const formLink = document.getElementById('form-link');
